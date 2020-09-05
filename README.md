@@ -34,6 +34,7 @@ In order to do this, I needed to make a modification to the entrypoint.sh file w
 
 
 Deploy using ftp-deploy 
+
 Orginal github action
 https://github.com/SamKirkland/FTP-Deploy-Action
 
