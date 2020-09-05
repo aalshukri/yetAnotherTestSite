@@ -1,10 +1,7 @@
 # yetAnotherTestSite
 
-This is yet another test site 
-which is used for me to try out jekyll static website generation.
-
-
-This project uses github actions to build and deploy a jekyll static site to my own ftp server.
+This is yet another test site which I have used to try out jekyll static website generation.
+This project uses github actions to build and deploy a jekyll static site to my own remote ftp server (not using github hosting on gh-pages).
 
 ## Deployment workflow
 
