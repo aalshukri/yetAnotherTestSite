@@ -1,7 +1,6 @@
 name: Testing FTP Deployment
 
 on: push
-name: Publish Website
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
