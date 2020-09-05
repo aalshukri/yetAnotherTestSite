@@ -4,6 +4,8 @@ on:
   push
 
 jobs:
+  #Job1
+  # build jekyll site
   jekyll:
     runs-on: ubuntu-16.04
     steps:
@@ -35,4 +37,24 @@ jobs:
         JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
       with:
         target_branch: 'live'
+
+
+  #Job2
+  # deploy to ftp
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ftp://ftp.samkirkland.com/
+        ftp-username: myFtpUserName
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+
+
+
 
