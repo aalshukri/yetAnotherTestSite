@@ -1,8 +1,8 @@
 name: Testing the GitHub Pages publication
 
 on:
-  push
-   branch:
+  push:
+   branches:
    - master
 
 jobs:
