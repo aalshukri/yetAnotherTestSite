@@ -2,6 +2,8 @@ name: Testing the GitHub Pages publication
 
 on:
   push
+   branch:
+   - master
 
 jobs:
   #Job1
