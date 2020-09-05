@@ -1,6 +1,9 @@
 name: Testing FTP Deployment
 
-on: push
+on: 
+  push:
+    branches:
+      - live
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
