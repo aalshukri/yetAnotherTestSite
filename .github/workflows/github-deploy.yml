@@ -5,7 +5,6 @@ on: push
     - 'master'
   branches:    
     - live
-
   name: Publish Website
 	jobs:
 	  FTP-Deploy-Action:
@@ -21,4 +20,3 @@ on: push
 		ftp-server: ${{ secrets.FTP_SERVER }}
 		ftp-username: ${{ secrets.FTP_USERNAME }}
 		ftp-password: ${{ secrets.FTP_PASSWORD }}
-
