@@ -1,0 +1,4 @@
+#ftp Ignore files
+.github*
+.git-ftp.log
+.nojekyll
