@@ -1,3 +1,5 @@
+![TEST GitHub Jekyll Build Deploy](https://github.com/aalshukri/yetAnotherTestSite/workflows/TEST%20GitHub%20Jekyll%20Build%20Deploy/badge.svg)
+
 # YetAnotherTestSite
 
 This is yet another test site which I have used to try out jekyll static website generation.
