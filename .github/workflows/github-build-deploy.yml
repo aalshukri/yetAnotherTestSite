@@ -1,0 +1,57 @@
+name: TEST GitHub Jekyll Build Deploy
+
+on:
+  push:
+   branches:
+   - master
+
+jobs:
+  #Job1
+  # build jekyll site
+  jekyll:
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: actions/checkout@v2
+
+    # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    - uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
+    # Standard usage
+    - uses:  aalshukri/jekyll-action@2.0.4.1
+      env:
+        JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+
+    # Specify the Jekyll source location as a parameter
+    - uses: aalshukri/jekyll-action@2.0.4.1
+      env:
+        JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+      with:
+        jekyll_src: 'main_site'
+
+    # Specify the target branch (optional)
+    - uses: aalshukri/jekyll-action@2.0.4.1
+      env:
+        JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+      with:
+        target_branch: 'live'
+
+  #Job2
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/checkout@v2.1.0
+       with:
+        fetch-depth: 2
+        ref: live
+     - name: FTP-Deploy-Action
+       uses: aalshukri/FTP-Deploy-Action@3.1.1
+       with:
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
