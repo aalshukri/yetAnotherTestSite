@@ -52,6 +52,10 @@ My usage has the modificiation of using github secret values for
  - ftp-password
 
 
+See build and deploy file here
+
+https://github.com/aalshukri/yetAnotherTestSite/blob/master/.github/workflows/github-build-deploy.yml
+
 ## Trouble shoot
 
 If you are trying to replicate this yourself, 
